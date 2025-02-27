@@ -1,0 +1,25 @@
+<html>
+
+<body>
+  <button id="clickeMeButton">Click me</button>
+  <p id="gfg"></p>
+  <p id="paragrafoMouseOver"></p>
+
+  <script>
+    let i = 0;
+    let clickeMeButton = document.getElementById("clickeMeButton");
+    const handleClickClickMeButton = (event) => {
+      document.getElementById(
+        "gfg").innerHTML = "GeeksforGeeks";
+    }
+    // clickeMeButton.addEventListener('click', myFun);
+    clickeMeButton.onclick = handleClickClickMeButton;
+
+    clickeMeButton.onmouseover = (event) => {
+      let paragrafo = document.getElementById("paragrafoMouseOver");
+      paragrafo.innerHTML = ++i;
+    }
+  </script>
+</body>
+
+</html>
