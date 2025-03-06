@@ -85,24 +85,26 @@
               <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
-              <div class="mb-3">
-                <label for="nome" class="form-label">Nome</label>
-                <input type="texto" class="form-control" id="nome">
+            <form id="clienteForm">
+              <div class="modal-body">
+                <div class="mb-3">
+                  <label for="nome" class="form-label">Nome</label>
+                  <input type="texto" class="form-control" id="nome">
+                </div>
+                <div class="mb-3">
+                  <label for="email" class="form-label">E-mail</label>
+                  <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                </div>
+                <div class="mb-3">
+                  <label for="cpf" class="form-label">CPF</label>
+                  <input type="text" class="form-control" id="cpf">
+                </div>
               </div>
-              <div class="mb-3">
-                <label for="email" class="form-label">E-mail</label>
-                <input type="email" class="form-control" id="email" placeholder="name@example.com">
+              <div class="modal-footer">
+                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                <button type="submit" class="btn btn-primary">Salvar</button>
               </div>
-              <div class="mb-3">
-                <label for="cpf" class="form-label">CPF</label>
-                <input type="text" class="form-control" id="cpf">
-              </div>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
-              <button type="button" class="btn btn-primary">Salvar</button>
-            </div>
+            </form>
           </div>
         </div>
       </div>
@@ -132,7 +134,8 @@
   <script src=" ./node_modules/bootstrap/dist/js/bootstrap.bundle.js">
   </script>
 
-  <script src="./src/index.js"></script>
+  <script src="./src/index.js" type="module"></script>
+  <script src="./src/dataset.js" type="module"></script>
 </body>
 
 </html>
