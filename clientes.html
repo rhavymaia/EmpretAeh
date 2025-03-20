@@ -9,6 +9,9 @@
   <link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
   <link rel="stylesheet" href="./node_modules/bootstrap-icons/font/bootstrap-icons.css">
 
+  <!-- Toastfy -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+
   <link rel="stylesheet" href="./src/index.css">
 
 </head>
@@ -54,7 +57,7 @@
               <label for="nome" class="col-form-label">Nome</label>
             </div>
             <div class="col">
-              <input type="text" name="nome" id="nome" class="form-control">
+              <input type="text" name="pesquisa" id="pesquisa" class="form-control">
             </div>
           </div>
         </div>
@@ -89,15 +92,15 @@
               <div class="modal-body">
                 <div class="mb-3">
                   <label for="nome" class="form-label">Nome</label>
-                  <input type="texto" class="form-control" id="nome">
+                  <input type="text" class="form-control" name="nome" id="nome">
                 </div>
                 <div class="mb-3">
                   <label for="email" class="form-label">E-mail</label>
-                  <input type="email" class="form-control" id="email" placeholder="name@example.com">
+                  <input type="email" class="form-control" name="email" id="email" placeholder="name@example.com">
                 </div>
                 <div class="mb-3">
                   <label for="cpf" class="form-label">CPF</label>
-                  <input type="text" class="form-control" id="cpf">
+                  <input type="text" class="form-control" name="cpf" id="cpf">
                 </div>
               </div>
               <div class="modal-footer">
@@ -133,6 +136,10 @@
   <!-- Bootstrap -->
   <script src=" ./node_modules/bootstrap/dist/js/bootstrap.bundle.js">
   </script>
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
 
   <script src="./src/index.js" type="module"></script>
   <script src="./src/dataset.js" type="module"></script>

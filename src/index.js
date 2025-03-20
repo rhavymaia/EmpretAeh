@@ -9,22 +9,53 @@ function loadLocalStorage() {
   return JSON.parse(clientesLocalStorage);
 }
 
-let clientesTable = document.getElementById('clientesTable');
+const loadClienteTable = () => {
+  let clientesTable = document.getElementById('clientesTable');
 
-for (const cliente of loadLocalStorage()) {
-  clientesTable.insertAdjacentHTML(
-    'beforeend',
-    `<tr>
-      <td>${cliente.id}</td>
-      <td>${cliente.nome}</td>
-      <td>${cliente.email}</td>
-      <td>${cliente.cpf}</td>
-    </tr>`,
-  );
-}
+  let clientes = loadLocalStorage();
+  for (const cliente of clientes) {
+    clientesTable.insertAdjacentHTML('beforeend', getRowClienteTable(cliente));
+  }
+};
+
+const getRowClienteTable = (cliente) => {
+  return `<tr>
+    <td>${cliente.id}</td>
+    <td>${cliente.nome}</td>
+    <td>${cliente.email}</td>
+    <td>${cliente.cpf}</td>
+  </tr>`;
+};
 
 let clienteForm = document.getElementById('clienteForm');
 clienteForm.onsubmit = (event) => {
   event.preventDefault();
-  console.log('Submeteu o formulário');
+  // let nomeInput = document.getElementById('nome');
+  // let emailInput = document.getElementById('email');
+  // let cpfInput = document.getElementById('cpf');
+  let clienteFormData = new FormData(clienteForm);
+
+  // let cliente = {
+  //   id: 4,
+  //   nome: nomeInput.value,
+  //   email: emailInput.value,
+  //   cpf: cpfInput.value,
+  // };
+  cliente = Object.fromEntries(clienteFormData);
+
+  let clientes = loadLocalStorage();
+  clientes.push(cliente);
+  localStorage.setItem('clientes', JSON.stringify(clientes));
+
+  let clientesTable = document.getElementById('clientesTable');
+  clientesTable.insertAdjacentHTML('beforeend', getRowClienteTable(cliente));
+
+  Toastify({
+    text: 'Cliente cadastrado com sucesso!',
+    className: 'success',
+  }).showToast();
+
+  $('#clienteModal').modal('hide');
 };
+
+loadClienteTable();
