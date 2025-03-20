@@ -27,6 +27,11 @@ const getRowClienteTable = (cliente) => {
   </tr>`;
 };
 
+const clearForm = () {
+  // recupera os campos.
+  // atribui vazio aos valores.
+}
+
 let clienteForm = document.getElementById('clienteForm');
 clienteForm.onsubmit = (event) => {
   event.preventDefault();
